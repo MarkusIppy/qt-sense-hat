@@ -13,6 +13,7 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+DEFINES += UNIT_TEST
 
 SOURCES += main.cpp \
     ledgridcontrollerut.cpp \

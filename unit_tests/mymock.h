@@ -6,10 +6,15 @@
 class MyMock
 {
 public:
-    ~MyMock();
-    void expectOneCallAndReturnInt(QString functionName, int valueToReturn);
+    static void initMocks();
+    static void cleanupMocks();
+    static void expectOneCallAndReturnInt(QString functionName, int valueToReturn);
+    static void expectOneCallAndReturnPtr(QString functionName, void* valueToReturn);
+    static int returnIntValueForFunction(QString functionName);
+    static void* returnPtrValueForFunction(QString functionName);
 private:
-    QMap<QString, int> intCallsExpected;
+    static QMap<QString, int> intCallsExpected;
+    static QMap<QString, void*> ptrCallsExpected;
 };
 
 #endif // MYMOCK_H

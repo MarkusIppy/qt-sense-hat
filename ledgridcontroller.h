@@ -12,6 +12,7 @@ private:
     ~LedGridController();
     static LedGridController* instance;
     bool init();
+    quint16 toRGB565(QColor color);
     quint16* frameBuffer;
 };
 
