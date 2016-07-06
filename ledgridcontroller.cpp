@@ -1,5 +1,6 @@
 #include "ledgridcontroller.h"
 #include <QDebug>
+#include <linux/fb.h>
 
 LedGridController* LedGridController::instance = Q_NULLPTR;
 
@@ -30,12 +31,12 @@ LedGridController* LedGridController::getInstance()
 bool LedGridController::init()
 {
     int fbDevice = open_fbdev("RPi-Sense FB");
-/*    if (fbDevice <= 0)
+    if (fbDevice <= 0)
     {
         qDebug() << "Framebuffer device open failed.";
         return false;
     }
-
+    /*
     frameBuffer = mmap(0, 128, PROT_READ | PROT_WRITE, MAP_SHARED, fbDevice, 0);
     if (!frameBuffer)
     {

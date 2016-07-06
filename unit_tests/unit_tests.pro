@@ -23,4 +23,5 @@ DEFINES += SRCDIR=\\\"$$PWD/\\\"
 HEADERS += \
     ledgridcontrollerut.h \
     ../ledgridcontroller.h \
-    mymock.h
+    mymock.h \
+    linux/fb.h
