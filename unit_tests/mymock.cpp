@@ -1,7 +1,9 @@
 #include "mymock.h"
 #include <QTest>
 #include <QDebug>
+#ifndef UNIT_TEST
 #include <sys/mman.h>
+#endif
 
 QMap<QString, int> MyMock::intCallsExpected;
 QMap<QString, void*> MyMock::ptrCallsExpected;

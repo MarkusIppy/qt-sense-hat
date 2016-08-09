@@ -2,7 +2,9 @@
 #include <QDebug>
 #include <QtEndian>
 #include <linux/fb.h>
+#ifndef UNIT_TEST
 #include <sys/mman.h>
+#endif
 
 LedGridController* LedGridController::instance = Q_NULLPTR;
 
